@@ -1,2 +1,266 @@
 # shi-20-10-website
 Vietnamese Women's Day 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shi chúc mừng 20/10 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      background: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80") no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(3px);
+    }
+
+    header {
+      font-size: 2em;
+      font-weight: 500;
+      margin-bottom: 10px;
+      animation: fadeIn 2.5s ease forwards;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .shi {
+      font-size: 1.5em;
+      color: #ffefff;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px rgba(255, 150, 255, 0.8);
+      opacity: 0;
+      animation: fadeIn 3s ease forwards 0.5s;
+    }
+
+    /* 🌸 Bông hoa phát sáng đổi màu */
+    .flower {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      animation: spin 15s linear infinite, colorShift 8s ease-in-out infinite alternate;
+      margin: 40px auto;
+      filter: drop-shadow(0 0 25px rgba(255, 200, 250, 0.7));
+    }
+
+    .petal {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle at 30% 30%, #ffd6f3, #caa0ff 80%);
+      border-radius: 50% 50% 0 50%;
+      transform-origin: bottom right;
+      opacity: 0.85;
+    }
+
+    .petal:nth-child(1) { transform: rotate(0deg); }
+    .petal:nth-child(2) { transform: rotate(45deg); }
+    .petal:nth-child(3) { transform: rotate(90deg); }
+    .petal:nth-child(4) { transform: rotate(135deg); }
+    .petal:nth-child(5) { transform: rotate(180deg); }
+    .petal:nth-child(6) { transform: rotate(225deg); }
+    .petal:nth-child(7) { transform: rotate(270deg); }
+    .petal:nth-child(8) { transform: rotate(315deg); }
+
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, #fff5f9, #f2b3f3);
+      border-radius: 50%;
+      box-shadow: 0 0 25px rgba(255, 200, 250, 0.8);
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes colorShift {
+      0% { filter: hue-rotate(0deg); }
+      50% { filter: hue-rotate(90deg); }
+      100% { filter: hue-rotate(180deg); }
+    }
+
+    .message {
+      font-size: 1.2em;
+      max-width: 650px;
+      margin: 15px auto;
+      opacity: 0;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 4s ease forwards 1.5s;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.9em;
+      color: #f2f2f2;
+      font-style: italic;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 4s ease forwards 2s;
+    }
+
+    #musicControl {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      z-index: 999;
+    }
+
+    #musicControl:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transform: scale(1.1);
+    }
+
+    audio { display: none; }
+
+    #loginBox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      z-index: 1000;
+    }
+
+    #loginBox input {
+      padding: 12px 20px;
+      font-size: 1em;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    #loginBox button {
+      margin-top: 15px;
+      background-color: #caa0ff;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #loginBox button:hover {
+      background-color: #a47cff;
+    }
+  </style>
+</head>
+<body>
+  <div id="loginBox">
+    <h2>💖 Xin chào! Hãy nhập tên của bạn 💫</h2>
+    <input type="text" id="nameInput" placeholder="Nhập tên của bạn..." />
+    <button onclick="login()">Vào xem lời chúc 🌷</button>
+  </div>
+
+  <header>💫 Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10 💫</header>
+  <div class="shi" id="shiText">Shi chúc bạn một ngày 20/10 thật rạng rỡ 💕</div>
+
+  <div class="flower">
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+    <div class="petal"></div><div class="petal"></div><div class="petal"></div><div class="petal"></div>
+    <div class="center"></div>
+  </div>
+
+  <p class="message" id="greetingMsg"></p>
+
+  <footer>— Với tất cả sự trân trọng 💖 —</footer>
+
+  <!-- 🎵 Nhạc nền “Perfect” -->
+  <audio id="bgMusic" loop>
+    <source src="Perfect.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="musicControl">🔊</button>
+
+  <script>
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicControl");
+    let playing = true;
+
+    const randomMessages = [
+      "luôn tươi cười, hạnh phúc và yêu đời như những đóa hoa tháng Mười 💐",
+      "ngày càng xinh đẹp, thành công và được yêu thương thật nhiều 🌸",
+      "có một ngày 20/10 thật ý nghĩa, ngập tràn niềm vui và nụ cười 💖",
+      "mãi là ánh nắng dịu dàng sưởi ấm mọi người xung quanh ☀️",
+      "luôn mạnh mẽ, tự tin và rạng rỡ trong từng bước đi của cuộc sống 🌷",
+      "luôn có những phút giây bình yên, an nhiên và đáng nhớ 💞",
+      "gặp nhiều điều may mắn, hạnh phúc trọn vẹn trong hôm nay và mãi mãi 💫",
+      "xinh đẹp như hoa, dịu dàng như gió và tỏa sáng như mặt trời 🌼",
+      "được yêu thương, được trân trọng và luôn là chính mình ❤️",
+      "có một hành trình thật nhiều yêu thương và niềm vui lan tỏa 🌺"
+    ];
+
+    btn.onclick = () => {
+      if (playing) {
+        music.pause();
+        btn.textContent = "🔇";
+      } else {
+        music.play();
+        btn.textContent = "🔊";
+      }
+      playing = !playing;
+    };
+
+    function login() {
+      const name = document.getElementById("nameInput").value.trim();
+      if (name === "") {
+        alert("Vui lòng nhập tên của bạn ❤️");
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem("visitors")) || [];
+      if (!users.includes(name)) {
+        users.push(name);
+        localStorage.setItem("visitors", JSON.stringify(users));
+      }
+
+      const randomWish = randomMessages[Math.floor(Math.random() * randomMessages.length)];
+
+      document.getElementById("shiText").textContent = `Shi chúc ${name} ${randomWish}`;
+      document.getElementById("greetingMsg").innerHTML =
+        `Cảm ơn ${name} vì đã mang đến những điều tốt đẹp, nhẹ nhàng và đầy cảm hứng cho thế giới này 💖`;
+      document.getElementById("loginBox").style.display = "none";
+
+      music.play();
+      console.log("Danh sách người đã truy cập:", users);
+    }
+  </script>
+</body>
+</html>
